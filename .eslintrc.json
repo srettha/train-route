@@ -1,0 +1,87 @@
+{
+  "env": {
+    "es6": true,
+    "jest": true,
+    "node": true
+  },
+  "extends": [
+    "airbnb-base",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier",
+    "plugin:functional/external-recommended",
+    "plugin:functional/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "project": "tsconfig.json",
+    "sourceType": "module"
+  },
+  "plugins": ["@typescript-eslint", "@typescript-eslint/eslint-plugin", "functional", "prettier"],
+  "rules": {
+    // Prettier
+    "prettier/prettier": "error",
+
+    // Typescript to eslint
+    "@typescript-eslint/explicit-function-return-type": "error",
+    "@typescript-eslint/interface-name-prefix": 0,
+    "@typescript-eslint/member-delimiter-style": 0,
+    "@typescript-eslint/no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
+    "@typescript-eslint/no-shadow": ["error"],
+
+    // Eslint
+    "arrow-parens": ["off", "as-needed"],
+    "camelcase": "error",
+    "functional/functional-parameters": 0,
+    "functional/no-class": 0,
+    "functional/no-conditional-statement": 0,
+    "functional/no-expression-statement": 0,
+    "functional/no-let": [
+      "error",
+      {
+        "allowLocalMutation": true
+      }
+    ],
+    "functional/no-this-expression": 0,
+    "functional/no-throw-statement": 0,
+    "functional/no-return-void": 0,
+    "functional/prefer-type-literal": 0,
+    "id-blacklist": "error",
+    "id-match": "error",
+    "import/extensions": 0,
+    "import/newline-after-import": "error",
+    "import/no-unresolved": 0,
+    "import/order": [
+      "error",
+      {
+        "alphabetize": {
+          "order": "asc"
+        },
+        "groups": [["external", "builtin"], "internal", ["parent", "sibling", "index"]],
+        "newlines-between": "always"
+      }
+    ],
+    "import/prefer-default-export": 0,
+    "no-shadow": "off",
+    "no-underscore-dangle": "error",
+    "no-useless-constructor": 0,
+    "padding-line-between-statements": [
+      "error",
+      {
+        "blankLine": "always",
+        "prev": "*",
+        "next": "return"
+      }
+    ],
+    "sort-imports": [
+      "error",
+      {
+        "ignoreCase": true,
+        "ignoreDeclarationSort": true,
+        "ignoreMemberSort": false
+      }
+    ]
+  }
+}
